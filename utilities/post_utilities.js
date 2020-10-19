@@ -12,10 +12,17 @@ const allPosts = function (req) {
 };
 
 // update
+const updatePost = function(id) {
+    return Post.findByIdAndUpdate(id);
+  };
 
 // delete
-
+const deletePost = function (req) {
+    return Post.findByIdRemove(id);
+}
 module.exports = {
     newPost,
-    allPosts
+    allPosts,
+    updatePost,
+    deletePost
 }
