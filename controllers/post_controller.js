@@ -23,6 +23,16 @@ const getAllPosts = (req, res) => {
    });
 }
 
+const updateOnePost = (req, res) => {
+  updatePosts(req).exec((err, posts) => {
+    if(err){
+      res.status(500)
+      return res.json ({ error: err.message })
+    }
+    res.json(posts)
+  });
+}
+
 module.exports = {
     addNewPost,
     getAllPosts
